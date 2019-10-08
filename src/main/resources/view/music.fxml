@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+    <children>
+        <StackPane layoutX="68.0" layoutY="114.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane id="mainPane" fx:id="mainPane">
+                    <children>
+                        <JFXButton id="scanBtn" buttonType="RAISED" layoutX="189.0" layoutY="236.0" onAction="#scanMusic" style="-fx-background-radius: 25px;" styleClass="coolFont" text="Scan For Audio Files" textFill="WHITE">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </JFXButton>
+
+                        <Label layoutX="125.0" layoutY="132.0" styleClass="coolFont" text="Music Player and Indexer" textFill="#222222">
+                            <font>
+                                <Font size="46.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="89.0" styleClass="coolFont" text="Ignite" textFill="#0084c8">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane id="scanPane" fx:id="scanPane" layoutX="10.0" layoutY="10.0" visible="false">
+                    <children>
+                  <GridPane layoutY="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="137.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="178.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="251.0" styleClass="coolFont" text="Scanning Please Wait" textFill="#0084c8" GridPane.columnIndex="1">
+                                  <font>
+                                      <Font size="30.0" />
+                                  </font>
+                              </Label>
+                              <ProgressIndicator fx:id="scanProgress" prefHeight="93.0" prefWidth="115.0" style="-fx-min-height: 200; -fx-min-width: 200;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Circle fill="WHITE" radius="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-scale-x: 1px;" styleClass="shadow" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        </Circle>
+                        <GridPane prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="94.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="204.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="90.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                                    <Label prefHeight="102.0" prefWidth="115.0" styleClass="coolFont" text="Songs Added" textAlignment="CENTER" textFill="#0084c8" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <font>
+                                            <Font size="28.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="songsAdded" alignment="CENTER" prefHeight="125.0" prefWidth="133.0" styleClass="coolFont" text="0" textAlignment="CENTER" textFill="#0084c8" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                        <font>
+                                            <Font size="64.0" />
+                                        </font>
+                                    </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="musicPane" layoutX="10.0" layoutY="10.0" visible="false">
+                    <children>
+                        <Circle fill="#00acf4" layoutX="300.0" layoutY="138.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <GridPane layoutY="257.0" prefHeight="85.0" prefWidth="600.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="45.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="510.0" minWidth="10.0" prefWidth="510.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="44.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="33.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="39.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label fx:id="titleLabel" styleClass="coolFont" text="Ignite" textFill="#0084c8" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="artistLabel" styleClass="coolFont" text="Artist" textFill="#222222" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                  <JFXHamburger id="menuButton" layoutX="556.0" layoutY="14.0" onMouseClicked="#showList" opacity="0.5">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXHamburger>
+                        <Button id="playBtn" layoutX="271.0" layoutY="105.0" mnemonicParsing="false" onAction="#playSong" prefHeight="66.0" prefWidth="64.0" />
+                  <Button id="nextBtn" layoutX="456.0" layoutY="105.0" mnemonicParsing="false" onAction="#nextSong" prefHeight="66.0" prefWidth="64.0" styleClass="playButtons" />
+                  <Button id="prevBtn" layoutX="78.0" layoutY="105.0" mnemonicParsing="false" onAction="#prevSong" prefHeight="66.0" prefWidth="64.0" styleClass="playButtons" />
+
+                    </children>
+                </AnchorPane>
+            <AnchorPane fx:id="playlistPane" prefHeight="364.0" prefWidth="600.0" visible="false">
+               <children>
+                  <JFXTreeTableView fx:id="playlist" layoutX="6.0" prefHeight="352.0" prefWidth="600.0" stylesheets="@../style/style.css" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0 " onMouseClicked="#handleSongItemClicked" onKeyPressed="#handleSongItemClicked"/>
+                  <GridPane layoutX="54.0" layoutY="345.0" prefHeight="49.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXButton id="backBtn" onAction="#goBackToPlay" styleClass="playButtons" text=" ">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+            </children>
+        </StackPane>
+    </children>
+
+</AnchorPane>
